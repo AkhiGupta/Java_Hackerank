@@ -29,3 +29,13 @@ public class DuplicateWords {
         in.close();
     }
 }
+
+
+\w ----> A word character: [a-zA-Z_0-9]
+\W ----> A non-word character: [^\w]
+\b ----> A word boundary
+\1 ----> Matches whatever was matched in the 1st group of parentheses, which in this case is the (\w+)
++ ----> Match whatever it's placed after 1 or more times
+
+The \b boundaries are needed for special cases such as "Bob and Andy" (we don't want to match "and" twice). 
+Another special case is "My thesis is great" (we don't want to match "is" twice).
